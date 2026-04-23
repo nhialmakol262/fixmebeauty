@@ -40,14 +40,14 @@ function Contact() {
               <span className="info-icon">📍</span>
               <div>
                 <h4>Address</h4>
-                <p>123 Beauty Lane, Suite 100<br />Lagos, Nigeria</p>
+                <p>Kikoni, Makerere<br />Kampala, Uganda</p>
               </div>
             </div>
             <div className="info-item">
               <span className="info-icon">📞</span>
               <div>
                 <h4>Phone</h4>
-                <p>(555) 123-4567<br />(555) 987-6543</p>
+                <p>+256 781175289<br />+256 780832421</p>
               </div>
             </div>
             <div className="info-item">

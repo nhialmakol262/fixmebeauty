@@ -4,10 +4,10 @@ import './Home.css';
 
 function Home() {
   const featuredProducts = [
-    { id: 1, name: 'Argan Hair Oil', price: '$18.99', desc: 'Nourishing oil for silky smooth hair', image: '/Images/hair growth oil.jpg' },
-    { id: 2, name: 'Herbal Shampoo', price: '$14.50', desc: 'Gentle cleanse with natural extracts', image: '/Images/shampo flavour 1.jpg' },
-    { id: 3, name: 'Glow Face Cream', price: '$22.00', desc: 'Hydrating cream for radiant skin', image: '/Images/coconut butter.jpg' },
-    { id: 4, name: 'Lip Care Balm', price: '$8.99', desc: 'Soft, moisturized lips all day', image: '/Images/hair butter.jpg' },
+    { id: 1, name: 'Argan Hair Oil', price: '40,000 Shs', desc: 'Nourishing oil for silky smooth hair', image: '/Images/hair growth oil.jpg' },
+    { id: 2, name: 'Herbal Shampoo', price: '25,000 Shs', desc: 'Gentle cleanse with natural extracts', image: '/Images/shampo flavour 1.jpg' },
+    { id: 3, name: 'Glow Face Cream', price: '50,000 Shs', desc: 'Hydrating cream for radiant skin', image: '/Images/coconut butter.jpg' },
+    { id: 4, name: 'Face Care Balm', price: '15,000 shs', desc: 'Soft, moisturized faces all day', image: '/Images/hair butter.jpg' },
   ];
 
   return (

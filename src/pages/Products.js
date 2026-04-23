@@ -18,7 +18,7 @@ function Products() {
       id: 1,
       name: 'Argan Hair Oil',
       category: 'hair-oil',
-      price: 18.99,
+      price: 40000 ,
       desc: 'Rich in vitamins and antioxidants, this argan oil deeply nourishes and restores shine to dry, damaged hair.',
       image: '/Images/hair growth oil.jpg',
     },

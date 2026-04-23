@@ -21,7 +21,7 @@ function Footer() {
         <div className="footer-section">
           <h4>Contact</h4>
           <p>Email: info@fixmebeauty.com</p>
-          <p>Phone: (555) 123-4567</p>
+          <p>Phone: +256 781175289</p>
         </div>
       </div>
       <div className="footer-bottom">
