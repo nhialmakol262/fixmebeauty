@@ -1,0 +1,126 @@
+.about-page {
+  background: #f9fafb;
+  min-height: calc(100vh - 70px);
+}
+
+.about-header {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.about-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-story {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.story-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-story h2 {
+  color: #065f46;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-story p {
+  color: #374151;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.about-values {
+  padding: 3rem 0 5rem;
+}
+
+.about-values h2 {
+  text-align: center;
+  color: #065f46;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.value-card h3 {
+  color: #047857;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.about-commitment {
+  padding: 3rem 0 5rem;
+  background: #f0fdf4;
+  margin: 0 -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.commitment-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-commitment h2 {
+  color: #065f46;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-commitment p {
+  color: #374151;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+}

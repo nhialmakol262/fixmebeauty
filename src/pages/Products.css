@@ -1,0 +1,149 @@
+.products-page {
+  background: #f9fafb;
+  min-height: calc(100vh - 70px);
+}
+
+.products-header {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.products-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.products-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2.5rem 0;
+}
+
+.category-tab {
+  background: #ffffff;
+  border: 2px solid #d1fae5;
+  color: #047857;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+  background: #ecfdf5;
+  border-color: #047857;
+}
+
+.category-tab.active {
+  background: #047857;
+  color: #ffffff;
+  border-color: #047857;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-bottom: 5rem;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.product-img-placeholder {
+  height: 180px;
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img-placeholder span {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #047857;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  color: #111827;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-desc {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  color: #047857;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  width: 100%;
+  background: #047857;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: #065f46;
+}
+
+@media (max-width: 768px) {
+  .products-header h1 {
+    font-size: 2rem;
+  }
+
+  .category-tabs {
+    gap: 0.5rem;
+  }
+
+  .category-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
