@@ -20,6 +20,7 @@ function Products() {
       category: 'hair-oil',
       price: 18.99,
       desc: 'Rich in vitamins and antioxidants, this argan oil deeply nourishes and restores shine to dry, damaged hair.',
+      image: '/Images/hair growth oil.jpg',
     },
     {
       id: 2,
@@ -27,6 +28,7 @@ function Products() {
       category: 'hair-oil',
       price: 14.99,
       desc: 'Pure coconut oil that strengthens hair roots, reduces breakage, and promotes healthy growth.',
+      image: '/Images/coconut butter.jpg',
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ function Products() {
       category: 'hair-oil',
       price: 21.50,
       desc: 'A blend of natural herbs and essential oils designed to stimulate hair growth and thickness.',
+      image: '/Images/hair growth oil.jpg',
     },
     {
       id: 4,
@@ -41,6 +44,7 @@ function Products() {
       category: 'shampoo',
       price: 14.50,
       desc: 'Gentle cleansing formula with silk proteins that leaves hair soft, smooth, and manageable.',
+      image: '/Images/shampo flavour 1.jpg',
     },
     {
       id: 5,
@@ -48,6 +52,7 @@ function Products() {
       category: 'shampoo',
       price: 16.00,
       desc: 'Clinically proven to fight dandruff while soothing the scalp with tea tree and peppermint.',
+      image: '/Images/shamo flavor 2.jpg',
     },
     {
       id: 6,
@@ -55,6 +60,7 @@ function Products() {
       category: 'shampoo',
       price: 15.50,
       desc: 'Adds body and fullness to fine, limp hair without weighing it down.',
+      image: '/Images/shampo flavor 3.jpg',
     },
     {
       id: 7,
@@ -62,6 +68,7 @@ function Products() {
       category: 'conditioner',
       price: 16.99,
       desc: 'Intensive conditioning treatment that repairs split ends and restores moisture balance.',
+      image: '/Images/hair butter.jpg',
     },
     {
       id: 8,
@@ -69,6 +76,7 @@ function Products() {
       category: 'conditioner',
       price: 17.50,
       desc: 'Specially formulated to protect color-treated hair and extend vibrancy between salon visits.',
+      image: '/Images/hair butter 2.jpg',
     },
     {
       id: 9,
@@ -76,6 +84,7 @@ function Products() {
       category: 'face-cream',
       price: 22.00,
       desc: 'Lightweight, non-greasy moisturizer that hydrates and gives your skin a natural, healthy glow.',
+      image: '/Images/coconut butter.jpg',
     },
     {
       id: 10,
@@ -83,6 +92,7 @@ function Products() {
       category: 'face-cream',
       price: 28.00,
       desc: 'Rich night cream that works while you sleep to repair and rejuvenate tired skin.',
+      image: '/Images/hair treatment.jpg',
     },
     {
       id: 11,
@@ -90,6 +100,7 @@ function Products() {
       category: 'face-cream',
       price: 24.99,
       desc: 'Packed with Vitamin C to brighten skin tone, reduce dark spots, and boost radiance.',
+      image: '/Images/hair spray.jpg',
     },
     {
       id: 12,
@@ -97,6 +108,7 @@ function Products() {
       category: 'lip-care',
       price: 8.99,
       desc: 'Ultra-moisturizing lip balm with shea butter and vitamin E for soft, supple lips.',
+      image: '/Images/hair butter.jpg',
     },
     {
       id: 13,
@@ -104,6 +116,7 @@ function Products() {
       category: 'lip-care',
       price: 10.50,
       desc: 'A hint of color combined with deep hydration for beautiful, healthy-looking lips.',
+      image: '/Images/hair treatment.jpg',
     },
     {
       id: 14,
@@ -111,6 +124,7 @@ function Products() {
       category: 'lip-care',
       price: 9.99,
       desc: 'Gentle sugar scrub that removes dry skin and leaves lips smooth and kissable.',
+      image: '/Images/hair butter 2.jpg',
     },
   ];
 
@@ -142,8 +156,8 @@ function Products() {
         <div className="products-grid">
           {filteredProducts.map((product) => (
             <div key={product.id} className="product-card">
-              <div className="product-img-placeholder">
-                <span>{product.name.charAt(0)}</span>
+              <div className="product-img-wrapper">
+                <img src={product.image} alt={product.name} />
               </div>
               <div className="product-info">
                 <h3>{product.name}</h3>

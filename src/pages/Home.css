@@ -1,5 +1,6 @@
 .hero {
-  background: linear-gradient(135deg, #047857 0%, #10b981 50%, #059669 100%);
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
   padding: 6rem 2rem;
   text-align: center;
@@ -100,21 +101,27 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.featured-img-placeholder {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #047857, #10b981);
-  border-radius: 50%;
+.featured-img-wrapper {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
   margin: 0 auto 1.5rem;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f3f4f6;
 }
 
-.featured-img-placeholder span {
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: 700;
+.featured-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.featured-card:hover .featured-img-wrapper img {
+  transform: scale(1.08);
 }
 
 .featured-card h3 {
