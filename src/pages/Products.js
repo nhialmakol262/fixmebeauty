@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Products.css';
+import { useCart } from '../context/CartContext';
 
 function Products() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const { addToCart } = useCart();
 
   const categories = [
     { id: 'all', label: 'All Products' },
@@ -157,6 +159,28 @@ function Products() {
     return 'UGX -';
   };
 
+  const parsePriceToNumber = (price) => {
+    if (typeof price === 'number' && Number.isFinite(price)) {
+      return price;
+    }
+
+    if (typeof price === 'string') {
+      const numeric = Number(price.replace(/,/g, '').replace(/[^0-9.]/g, ''));
+      return Number.isFinite(numeric) ? numeric : 0;
+    }
+
+    return 0;
+  };
+
+  const handleAddToCart = (product) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: parsePriceToNumber(product.price),
+    });
+  };
+
   return (
     <div className="products-page">
       <div className="products-header">
@@ -187,7 +211,9 @@ function Products() {
                 <h3>{product.name}</h3>
                 <p className="product-desc">{product.desc}</p>
                 <p className="product-price">{formatPrice(product.price)}</p>
-                <button className="add-to-cart">Add to Cart</button>
+                <button className="add-to-cart" onClick={() => handleAddToCart(product)}>
+                  Add to Cart
+                </button>
               </div>
             </div>
           ))}
