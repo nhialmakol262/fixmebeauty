@@ -18,7 +18,7 @@ function Products() {
       id: 1,
       name: 'Argan Hair Oil',
       category: 'hair-oil',
-      price: 40000 ,
+      price: '40000 Shs' ,
       desc: 'Rich in vitamins and antioxidants, this argan oil deeply nourishes and restores shine to dry, damaged hair.',
       image: '/Images/hair growth oil.jpg',
     },
@@ -26,7 +26,7 @@ function Products() {
       id: 2,
       name: 'Coconut Hair Oil',
       category: 'hair-oil',
-      price: 14.99,
+      price: '25000 Shs',
       desc: 'Pure coconut oil that strengthens hair roots, reduces breakage, and promotes healthy growth.',
       image: '/Images/coconut butter.jpg',
     },
@@ -34,7 +34,7 @@ function Products() {
       id: 3,
       name: 'Herbal Growth Oil',
       category: 'hair-oil',
-      price: 21.50,
+      price: '50000 Shs',
       desc: 'A blend of natural herbs and essential oils designed to stimulate hair growth and thickness.',
       image: '/Images/hair growth oil.jpg',
     },
@@ -42,7 +42,7 @@ function Products() {
       id: 4,
       name: 'Silk Smooth Shampoo',
       category: 'shampoo',
-      price: 14.50,
+      price: 30000,
       desc: 'Gentle cleansing formula with silk proteins that leaves hair soft, smooth, and manageable.',
       image: '/Images/shampo flavour 1.jpg',
     },
@@ -50,7 +50,7 @@ function Products() {
       id: 5,
       name: 'Anti-Dandruff Shampoo',
       category: 'shampoo',
-      price: 16.00,
+      price: 16000,
       desc: 'Clinically proven to fight dandruff while soothing the scalp with tea tree and peppermint.',
       image: '/Images/shamo flavor 2.jpg',
     },
@@ -58,7 +58,7 @@ function Products() {
       id: 6,
       name: 'Volume Boost Shampoo',
       category: 'shampoo',
-      price: 15.50,
+      price: 50000,
       desc: 'Adds body and fullness to fine, limp hair without weighing it down.',
       image: '/Images/shampo flavor 3.jpg',
     },
@@ -66,7 +66,7 @@ function Products() {
       id: 7,
       name: 'Deep Repair Conditioner',
       category: 'conditioner',
-      price: 16.99,
+      price: 60000,
       desc: 'Intensive conditioning treatment that repairs split ends and restores moisture balance.',
       image: '/Images/hair butter.jpg',
     },
@@ -74,7 +74,7 @@ function Products() {
       id: 8,
       name: 'Color Protect Conditioner',
       category: 'conditioner',
-      price: 17.50,
+      price: 65000,
       desc: 'Specially formulated to protect color-treated hair and extend vibrancy between salon visits.',
       image: '/Images/hair butter 2.jpg',
     },
@@ -82,7 +82,7 @@ function Products() {
       id: 9,
       name: 'Hydrating Glow Cream',
       category: 'face-cream',
-      price: 22.00,
+      price: 75000,
       desc: 'Lightweight, non-greasy moisturizer that hydrates and gives your skin a natural, healthy glow.',
       image: '/Images/coconut butter.jpg',
     },
@@ -90,7 +90,7 @@ function Products() {
       id: 10,
       name: 'Night Repair Cream',
       category: 'face-cream',
-      price: 28.00,
+      price: 100000,
       desc: 'Rich night cream that works while you sleep to repair and rejuvenate tired skin.',
       image: '/Images/hair treatment.jpg',
     },
@@ -98,7 +98,7 @@ function Products() {
       id: 11,
       name: 'Vitamin C Brightening Cream',
       category: 'face-cream',
-      price: 24.99,
+      price: 90000,
       desc: 'Packed with Vitamin C to brighten skin tone, reduce dark spots, and boost radiance.',
       image: '/Images/hair spray.jpg',
     },
@@ -106,7 +106,7 @@ function Products() {
       id: 12,
       name: 'Shea Butter Lip Balm',
       category: 'lip-care',
-      price: 8.99,
+      price: 30000,
       desc: 'Ultra-moisturizing lip balm with shea butter and vitamin E for soft, supple lips.',
       image: '/Images/hair butter.jpg',
     },
@@ -114,7 +114,7 @@ function Products() {
       id: 13,
       name: 'Tinted Lip Care',
       category: 'lip-care',
-      price: 10.50,
+      price: 35000,
       desc: 'A hint of color combined with deep hydration for beautiful, healthy-looking lips.',
       image: '/Images/hair treatment.jpg',
     },
@@ -122,7 +122,7 @@ function Products() {
       id: 14,
       name: 'Exfoliating Lip Scrub',
       category: 'lip-care',
-      price: 9.99,
+      price: 35000,
       desc: 'Gentle sugar scrub that removes dry skin and leaves lips smooth and kissable.',
       image: '/Images/hair butter 2.jpg',
     },
@@ -132,6 +132,30 @@ function Products() {
     activeCategory === 'all'
       ? products
       : products.filter((p) => p.category === activeCategory);
+
+  const ugxFormatter = new Intl.NumberFormat('en-UG', {
+    style: 'currency',
+    currency: 'UGX',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
+  const formatPrice = (price) => {
+    if (typeof price === 'number' && Number.isFinite(price)) {
+      return ugxFormatter.format(price);
+    }
+
+    if (typeof price === 'string') {
+      const cleaned = price.replace(/,/g, '').trim();
+      const numeric = Number(cleaned.replace(/[^0-9.]/g, ''));
+
+      if (Number.isFinite(numeric) && cleaned.length > 0) {
+        return ugxFormatter.format(numeric);
+      }
+    }
+
+    return 'UGX -';
+  };
 
   return (
     <div className="products-page">
@@ -162,7 +186,7 @@ function Products() {
               <div className="product-info">
                 <h3>{product.name}</h3>
                 <p className="product-desc">{product.desc}</p>
-                <p className="product-price">${product.price.toFixed(2)}</p>
+                <p className="product-price">{formatPrice(product.price)}</p>
                 <button className="add-to-cart">Add to Cart</button>
               </div>
             </div>

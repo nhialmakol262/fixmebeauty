@@ -119,6 +119,54 @@
   margin-bottom: 1.2rem;
 }
 
+.about-members {
+  padding: 1rem 0 5rem;
+}
+
+.about-members h2 {
+  text-align: center;
+  color: #065f46;
+  font-size: 2rem;
+  margin-bottom: 2.2rem;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.member-card {
+  background: #ffffff;
+  border: 1px solid #d1fae5;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(4, 120, 87, 0.16);
+}
+
+.member-card h3 {
+  color: #047857;
+  font-size: 1.15rem;
+  margin-bottom: 0.45rem;
+}
+
+.member-position {
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.member-phone {
+  color: #6b7280;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .about-header h1 {
     font-size: 2rem;
