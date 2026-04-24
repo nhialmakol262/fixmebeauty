@@ -21,6 +21,59 @@ function About() {
     },
   ];
 
+  const groupMembers = [
+    {
+      name: 'NAYIGA FRANCISCA',
+      position: 'Team Leader',
+      phone: '+256 781 175289',
+    },
+    {
+      name: 'OYAPEL PEACE',
+      position: 'Marketing Coordinator',
+      phone: '+256 780 832 421',
+    },
+    {
+      name: 'MATSIKO LUCKY',
+      position: 'Product Specialist',
+      phone: '+256 750 937 097',
+    },
+    {
+      name: 'NTAMBIYE SHERINA',
+      position: 'Customer Support Lead',
+      phone: '+256 709 861 550',
+    },
+    {
+      name: 'MUKISA VICTOR ESTHER',
+      position: 'Sales Representative',
+      phone: '+256 772 418 330',
+    },
+    {
+      name: 'KAVUMA DERAH DESTINY',
+      position: 'Content Creator',
+      phone: '+256 702 186 354',
+    },
+    {
+      name: 'NABISASO TRACY ESTHER',
+      position: 'Social Media Manager',
+      phone: '+256 740 868 297',
+    },
+    {
+      name: 'OKELLO RAYMOND HOSEA',
+      position: 'Operations Assistant',
+      phone: '+256 780 492 327',
+    },
+    {
+      name: 'NHIAL DANIEL MAKOL',
+      position: 'Finance Officer',
+      phone: '+256 773 211 593',
+    },
+    {
+      name: 'ABAHO JAMES',
+      position: 'Support Officer',
+      phone: '+256 780 485 954',
+    },
+  ];
+
   return (
     <div className="about-page">
       <div className="about-header">
@@ -55,6 +108,20 @@ function About() {
               <div key={index} className="value-card">
                 <h3>{value.title}</h3>
                 <p>{value.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Group Members Section */}
+        <section className="about-members">
+          <h2>Group Members</h2>
+          <div className="members-grid">
+            {groupMembers.map((member) => (
+              <div key={member.phone} className="member-card">
+                <h3>{member.name}</h3>
+                <p className="member-position">{member.position}</p>
+                <p className="member-phone">{member.phone}</p>
               </div>
             ))}
           </div>
