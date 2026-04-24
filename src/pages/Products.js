@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Products.css';
 import { useCart } from '../context/CartContext';
 
 function Products() {
   const [activeCategory, setActiveCategory] = useState('all');
-  const { addToCart } = useCart();
+  const { addToCart, cartCount } = useCart();
 
   const categories = [
     { id: 'all', label: 'All Products' },
@@ -219,6 +220,11 @@ function Products() {
           ))}
         </div>
       </div>
+
+      <Link to="/cart" className="products-floating-cart" aria-label={`Open cart with ${cartCount} items`}>
+        <span>Cart</span>
+        <strong>{cartCount}</strong>
+      </Link>
     </div>
   );
 }

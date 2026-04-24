@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
 import './Navbar.css';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const { cartCount } = useCart();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -39,15 +37,6 @@ function Navbar() {
               </Link>
             </li>
           ))}
-          <li className="nav-item cart-item" aria-label="Cart item count">
-            <Link
-              to="/cart"
-              className={`cart-badge ${location.pathname === '/cart' ? 'active' : ''}`}
-              onClick={closeMenu}
-            >
-              Cart ({cartCount})
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>
